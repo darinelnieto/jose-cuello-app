@@ -10088,3 +10088,33 @@ html, body {
     left: 41% !important;
   }
 }
+.contentApp {
+  display: flex;
+}
+.contentApp .panelAdmin {
+  width: 15%;
+  height: 100vh;
+}
+.contentApp .bodyAdmin {
+  width: 85%;
+}
+
+.headerApp {
+  padding: 0.5% 0;
+  border-bottom: 1px solid #353638;
+}
+.headerApp .headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.headerApp .headerContent #right {
+  display: none;
+  color: #353638;
+}
+.headerApp .headerContent #left {
+  color: #353638;
+}
+.headerApp .headerContent .logoApp {
+  width: 80px;
+}

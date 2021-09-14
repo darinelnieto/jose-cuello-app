@@ -1,0 +1,29 @@
+.contentApp{
+    display:flex;
+    .panelAdmin{
+        width:15%;
+        height: 100vh;
+    }
+    .bodyAdmin{
+        width: 85%;
+    }
+}
+.headerApp{
+    padding: .5% 0;
+    border-bottom: 1px solid #353638;
+    .headerContent{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        #right{
+            display:none;
+            color:#353638;
+        }
+        #left{
+            color:#353638;
+        }
+        .logoApp{
+            width: 80px;
+        }
+    }
+}
