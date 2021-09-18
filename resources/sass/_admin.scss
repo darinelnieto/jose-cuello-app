@@ -42,12 +42,25 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        #right{
-            display:none;
-            color:#353638;
-        }
-        #left{
-            color:#353638;
+        .barController{
+            .barCorto{
+                border-top: 2px solid #353638;
+                width: 15px;
+                margin: 0;
+                margin-bottom: 4px;
+            }
+            .barLargo{
+                border-top: 2px solid #353638;
+                width: 25px;
+                margin: 0;
+                margin-bottom: 4px;
+            }
+            &:hover{
+                .barCorto{
+                    width: 25px;
+                    transition:.3s;
+                }
+            }
         }
         .logoApp{
             width: 80px;

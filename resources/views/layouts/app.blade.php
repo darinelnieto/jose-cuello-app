@@ -45,8 +45,9 @@
                     <div class="row">
                         <div class="col-12 headerContent">
                             <a href="" class="barController">
-                                <i class="fas fa-arrow-left" id="left"></i>
-                                <i class="fas fa-arrow-right" id="right"></i>
+                                <hr class="barCorto"/>
+                                <hr class="barLargo"/>
+                                <hr class="barLargo"/>
                             </a>
                             <img src="{{asset('img/logo-05.png')}}" alt="Logo José Cuello" class="logoApp">
                         </div>

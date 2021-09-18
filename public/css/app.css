@@ -10135,12 +10135,21 @@ html, body {
   justify-content: space-between;
   align-items: center;
 }
-.headerApp .headerContent #right {
-  display: none;
-  color: #353638;
+.headerApp .headerContent .barController .barCorto {
+  border-top: 2px solid #353638;
+  width: 15px;
+  margin: 0;
+  margin-bottom: 4px;
 }
-.headerApp .headerContent #left {
-  color: #353638;
+.headerApp .headerContent .barController .barLargo {
+  border-top: 2px solid #353638;
+  width: 25px;
+  margin: 0;
+  margin-bottom: 4px;
+}
+.headerApp .headerContent .barController:hover .barCorto {
+  width: 25px;
+  transition: 0.3s;
 }
 .headerApp .headerContent .logoApp {
   width: 80px;
