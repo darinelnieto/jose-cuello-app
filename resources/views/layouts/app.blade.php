@@ -23,16 +23,21 @@
 <body>
     <section class="contentApp">
         <article class="panelAdmin">
+            <img src="{{asset('img/fondo-superior-panel-08.png')}}" class="fondoPanelSuperior">
+            <div class="contentPanelAdmin">
+                {{-- contenido tabs --}}
+            </div>
             <div class="logout">
-                <a class="dropdown-item" href="{{ route('logout') }}"
+                <a class="cierreSesion" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
+                    <i class="fas fa-power-off"></i> Cerrar Sesión
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
             </div>
+            <img src="{{asset('img/fondo-inferior-panel-09.png')}}" class="fondoPanelInferior">
         </article>
         <article class="bodyAdmin">
             <div class="headerApp">

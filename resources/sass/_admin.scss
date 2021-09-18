@@ -1,11 +1,38 @@
 .contentApp{
     display:flex;
     .panelAdmin{
-        width:15%;
+        width:20%;
         height: 100vh;
+        position: relative;
+        .fondoPanelSuperior{
+            position: absolute;
+            width: 100%;
+            top: -1px;
+            left: -1px;
+        }
+        .fondoPanelInferior{
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+        .logout{
+            position: absolute;
+            bottom: 3%;
+            z-index: 100;
+            width: 100%;
+            text-align: center;
+            .cierreSesion{
+                color:white;
+                font-size: 20px;
+                &:hover{
+                    color:white;
+                    text-decoration: none;
+                }
+            }
+        }
     }
     .bodyAdmin{
-        width: 85%;
+        width: 80%;
     }
 }
 .headerApp{
