@@ -18,14 +18,54 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Styles -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <section class="contentApp">
         <article class="panelAdmin">
             <img src="{{asset('img/fondo-superior-panel-08.png')}}" class="fondoPanelSuperior">
+            <div class="userPanel">
+                <h4 class="nameUser">{{auth::User()->name}}</h4>
+                <div class="contentImg">
+                    <img src="{{asset('img/imagen-user-invalid-10.jpg')}}" alt="Imagen de perfil">
+                </div>
+            </div>
             <div class="contentPanelAdmin">
-                {{-- contenido tabs --}}
+                <div class="userCollapse">
+                    <ul class="nav flex-column">
+                        <li>
+                            <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-clipboard-list"></i>
+                                <span>Ordenes</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Todos Las Ordenes</a>
+                                <a class="dropdown-item" href="#">Agregar Nueva</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-user"></i>
+                                <span>Usuarios</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{route('usuarios')}}">Todos Los Usuarios</a>
+                                <a class="dropdown-item" href="#">Agregar Nuevo</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-pencil-alt"></i>
+                                <span>Editar Perfil</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Todos Las Ordenes</a>
+                                <a class="dropdown-item" href="#">Agregar Nueva</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="logout">
                 <a class="cierreSesion" href="{{ route('logout') }}"
@@ -58,5 +98,4 @@
         </article>
     </section>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </html>

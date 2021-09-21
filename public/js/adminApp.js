@@ -1,12 +1,7 @@
 $('.barController').on('click', function(e){
     $('.panelAdmin').animate({'width': 'toggle'});
-    if($('.panelAdmin').css({'width':0})){
-        $('#left').css({'display':'none'});
-        $('#right').css({'display':'block'});
-    }else if($('.panelAdmin').css({'width':'15%'})){
-        $('#left').css({'display':'block'});
-        $('#right').css({'display':'none'});
-    }
+    $('.userPanel .contentImg').animate({'width': 'toggle'});
+    $('.userPanel .contentImg img').animate({'width': 'toggle'});
     e.preventDefault();
 });
 if($('.panelAdmin').css({'display':'block'})){
