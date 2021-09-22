@@ -1,11 +1,12 @@
 @extends('layouts.app')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.11.2/css/dataTables.bootstrap5.min.css">
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-12">
-            <table id="usersTable" style="width:100%">
+        <div class="col-6">
+            <a href="{{route('nuevo.usuario')}}">Agregar nuevo</a>
+        </div>
+        <div class="col-12 mt-4 mb-4">
+            <table id="usuarios" style="width:100%">
                 <thead>
                     <tr>
                         <th>Nombre</th>
@@ -13,17 +14,16 @@
                         <th>Teléfono</th>
                         <th>Rol</th>
                         <th>Estado</th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($users as $user)
+                    @foreach ($usuarios as $usuario)
                         <tr>
-                            <td>{{$user->name}}</td>
-                            <td>{{$user->email}}</td>
-                            <td>{{$user->phone}}</td>
-                            <td>{{$user->rol}}</td>
-                            <td>{{$user->state}}</td>
+                            <td>{{$usuario->name}}</td>
+                            <td>{{$usuario->email}}</td>
+                            <td>{{$usuario->phone}}</td>
+                            <td>{{$usuario->rol}}</td>
+                            <td>{{$usuario->state}}</td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -32,11 +32,3 @@
     </div>
 </div>
 @endsection
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.2/js/dataTables.bootstrap5.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('#usersTable').DataTable();
-        });
-    </script>

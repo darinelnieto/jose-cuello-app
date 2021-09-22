@@ -5,11 +5,12 @@
         height: 100vh;
         position: relative;
         max-width: 228px;
+        box-shadow: 0 2px 6px 0px;
         .fondoPanelSuperior{
             position: absolute;
             width: 100%;
             top: -1px;
-            left: -1px;
+            left: 0px;
         }
         .fondoPanelInferior{
             width: 100%;
@@ -125,6 +126,10 @@
 .dropdown-menu.show{
     position:relative !important;
     transform: none !important;
+}
+// estilos tabla usuarios
+#usuarios_length{
+    display:none;
 }
 @media(max-width:768px){
     .panelAdmin{

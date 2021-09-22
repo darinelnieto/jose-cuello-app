@@ -23,3 +23,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/usuarios', [App\Http\Controllers\UserController::class, 'index'])->name('usuarios');
 
+Route::get('create/users', [App\Http\Controllers\UserController::class, 'registerView'])->name('nuevo.usuario');
+

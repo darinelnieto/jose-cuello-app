@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -14,18 +15,17 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view('/users', compact('users'));
+        $usuarios = User::all();
+        return view('/users', compact('usuarios'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function registerView(){
+        return view('auth/register');
+    }
+
+    public function create(Request $request)
     {
-        //
+        
     }
 
     /**
