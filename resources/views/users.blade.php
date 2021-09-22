@@ -5,7 +5,7 @@
         <div class="col-6">
             <a href="{{route('nuevo.usuario')}}">Agregar nuevo</a>
         </div>
-        <div class="col-12 mt-4 mb-4">
+        <div class="col-12 pl-5 pr-5 mt-4 mb-4">
             <table id="usuarios" style="width:100%">
                 <thead>
                     <tr>
