@@ -5,3 +5,16 @@
     margin: 0 auto;
     max-width: 260px;
 }
+.form-control{
+    border-radius: 0;;
+    box-shadow: none !important;
+    border:none;
+    border-bottom: 2px solid #353638;
+    &:focus{
+        border-bottom: 2px solid #cacaca;
+    }
+}
+.form-group{
+    width: 100%;
+    margin: 3% auto;
+}

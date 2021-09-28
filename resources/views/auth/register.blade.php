@@ -22,6 +22,11 @@
                             </div>
                             <div class="col-md-6">
                                 <input id="surnames" type="text" class="form-control" name="surnames" value="" required autocomplete="name" placeholder="Apellidos">
+                                @error('surnames')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                             </div>
                         </div>
 
@@ -39,7 +44,12 @@
                                 @enderror
                             </div>
                         </div>
-
+                        <div class="form-group row">
+                            <div class="col-12">
+                                <p>Selecciona uno o más roles</p>
+                            </div>
+                            
+                        </div>
                         <div class="form-group row">
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Contraseña">

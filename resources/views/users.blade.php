@@ -22,7 +22,13 @@
                             <td>{{$usuario->name}}</td>
                             <td>{{$usuario->email}}</td>
                             <td>{{$usuario->phone}}</td>
-                            <td>{{$usuario->rol}}</td>
+                            <td>
+                                @if(!empty($usuario->getRoleNames()))
+                                    @foreach ($usuario->getRoleNames() as $userRole)
+                                        {{$userRole}}
+                                    @endforeach
+                                @endif
+                            </td>
                             <td>{{$usuario->state}}</td>
                         </tr>
                     @endforeach

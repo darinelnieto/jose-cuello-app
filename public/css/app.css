@@ -10148,6 +10148,11 @@ h3 {
     width: 100%;
   }
 }
+.form-control.form-control-sm {
+  border: 1px solid #353638 !important;
+  border-radius: 20px !important;
+}
+
 html, body {
   overflow: hidden;
   background: white;
@@ -10240,4 +10245,19 @@ html, body {
   text-transform: capitalize;
   margin: 0 auto;
   max-width: 260px;
+}
+
+.form-control {
+  border-radius: 0;
+  box-shadow: none !important;
+  border: none;
+  border-bottom: 2px solid #353638;
+}
+.form-control:focus {
+  border-bottom: 2px solid #cacaca;
+}
+
+.form-group {
+  width: 100%;
+  margin: 3% auto;
 }
