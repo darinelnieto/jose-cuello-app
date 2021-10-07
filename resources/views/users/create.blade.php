@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -8,7 +7,7 @@
                 <div class="card-body">
                     <h2 class="tituloRegistroUsuario">Registro de usuario</h2>
             
-                    {!! Form::open(['route' => 'auth.register']) !!}
+                    {!! Form::open(['route' => 'users.create']) !!}
                         @csrf
                         <div class="form-group row mt-4">
                             <div class="col-md-6">
@@ -29,7 +28,7 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-md-6">
-                                {!! Form::tel('name', null, array('placeholder' => 'Teléfono','class' => 'form-control')) !!}
+                                {!! Form::tel('phone', null, array('placeholder' => 'Teléfono','class' => 'form-control')) !!}
                             </div>
                             <div class="col-md-6">
                                 {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
@@ -40,11 +39,18 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group row optionsRoleFormRegisterUSers">
                             <div class="col-12 text-center">
                                 <p><strong>Selecciona uno o más roles</strong></p>
                             </div>
-                            
+                            @foreach ($roles as $rol)
+                                <div class="col-6 col-md-3 col-lg-2">
+                                    <label>
+                                        <input type="radio" name="roles" value="{{ $rol->id }}" class="mr-1">
+                                        {{ $rol->name }}
+                                    </label>
+                                </div>
+                            @endforeach
                         </div>
                         <div class="form-group row">
                             <div class="col-md-6">
@@ -60,7 +66,7 @@
                         </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-12 text-center">
-                                <button type="submit" class="btn btn-primary">Crear</button>
+                                <button type="submit" class="btn btn-sm btn-dark pl-5 pr-5 botonBlack">Crear</button>
                             </div>
                         </div>
                     {!! Form::close() !!}

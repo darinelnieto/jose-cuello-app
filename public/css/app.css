@@ -10261,3 +10261,28 @@ html, body {
   width: 100%;
   margin: 3% auto;
 }
+
+.tableUsersList thead {
+  position: relative;
+  bottom: 10px;
+}
+.tableUsersList tbody {
+  border-top: 1px solid #353638;
+  position: relative;
+  top: 6px;
+}
+
+.botonBlack {
+  border-radius: 20px;
+}
+
+.optionsRoleFormRegisterUSers {
+  justify-content: center;
+}
+
+.editUserPanel {
+  background: transparent;
+  border: none;
+  width: 84%;
+  outline: none;
+}

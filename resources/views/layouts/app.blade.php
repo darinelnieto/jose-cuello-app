@@ -13,9 +13,6 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.1/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap4.min.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     <!-- Styles -->
@@ -26,7 +23,7 @@
         <article class="panelAdmin">
             <img src="{{asset('img/fondo-superior-panel-08.png')}}" class="fondoPanelSuperior">
             <div class="userPanel">
-                <h4 class="nameUser">{{auth::User()->name}}</h4>
+                <h4 class="nameUser">{{auth::User()->name}} {{auth::User()->surnames}}</h4>
                 <div class="contentImg">
                     <img src="{{asset('img/imagen-user-invalid-10.jpg')}}" alt="Imagen de perfil">
                 </div>
@@ -44,23 +41,29 @@
                                 <a class="dropdown-item" href="#">Agregar Nueva</a>
                             </div>
                         </li>
+                        @can('users.create')
                         <li class="nav-item dropdown">
                             <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-user"></i>
                                 <span>Usuarios</span>
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{route('usuarios')}}">Todos Los Usuarios</a>
-                                <a class="dropdown-item" href="{{route('nuevo.usuario')}}">Agregar Nuevo</a>
+                                <a class="dropdown-item" href="{{route('users.index')}}">Todos Los Usuarios</a>
+                                <a class="dropdown-item" href="{{route('view.create.users')}}">Agregar Nuevo</a>
                             </div>
                         </li>
+                        @endcan
                         <li>
                             <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-pencil-alt"></i>
                                 <span>Editar Perfil</span>
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Todos Las Ordenes</a>
+                                <form action="{{route('users.edit')}}" method="get">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{auth::User()->id}}">
+                                    <button class="editUserPanel">Editar Información</button>
+                                </form>
                                 <a class="dropdown-item" href="#">Agregar Nueva</a>
                             </div>
                         </li>
@@ -102,14 +105,4 @@
 <script src="{{ asset('js/adminApp.js') }}" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.1/js/dataTables.bootstrap4.min.js"></script>
-<script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
-<script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap4.min.js"></script>
-<script>
-    $('#usuarios').DataTable({
-        responsive: true,
-        autoWidth:false
-    });
-</script>
 </html>

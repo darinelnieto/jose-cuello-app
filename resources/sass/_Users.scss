@@ -1,0 +1,44 @@
+.tituloRegistroUsuario{
+    color:#353638;
+    border-bottom: 2px solid #353638;
+    text-transform: capitalize;
+    margin: 0 auto;
+    max-width: 260px;
+}
+.form-control{
+    border-radius: 0;;
+    box-shadow: none !important;
+    border:none;
+    border-bottom: 2px solid #353638;
+    &:focus{
+        border-bottom: 2px solid #cacaca;
+    }
+}
+.form-group{
+    width: 100%;
+    margin: 3% auto;
+}
+.tableUsersList{
+    thead{
+        position:relative;
+        bottom: 10px;
+    }
+    tbody{
+        border-top: 1px solid #353638;
+        position:relative;
+        top: 6px;
+    }
+}
+.botonBlack{
+    border-radius: 20px;
+}
+//========================= Create users =====================================
+.optionsRoleFormRegisterUSers{
+    justify-content: center;
+}
+.editUserPanel{
+    background: transparent;
+    border: none;
+    width: 84%;
+    outline: none;
+}
