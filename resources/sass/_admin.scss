@@ -87,7 +87,8 @@
         border-radius: 50%;
         padding: 15px;
         img{
-            width: 100%;
+            width: 88px;
+            height: 88px;
             border-radius: 50%;
         }
     }
@@ -130,6 +131,9 @@
 // estilos tabla usuarios
 #usuarios_length{
     display:none;
+}
+.modal-dialog.editFile{
+    margin:16% auto;
 }
 @media(max-width:768px){
     .panelAdmin{

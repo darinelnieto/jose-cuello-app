@@ -46,7 +46,7 @@
                                 </form>
                             </td>
                             <td width="50px">
-                                <form action="" method="post">
+                                <form action="{{route('users.destroy')}}" method="post">
                                     @csrf
                                     <input type="hidden" name="id" value="{{$usuario->id}}">
                                     <button class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></button>

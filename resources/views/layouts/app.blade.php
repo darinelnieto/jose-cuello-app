@@ -25,7 +25,7 @@
             <div class="userPanel">
                 <h4 class="nameUser">{{auth::User()->name}} {{auth::User()->surnames}}</h4>
                 <div class="contentImg">
-                    <img src="{{asset('img/imagen-user-invalid-10.jpg')}}" alt="Imagen de perfil">
+                    <img src="/storage/{{auth::User()->file}}" alt="Imagen de perfil">
                 </div>
             </div>
             <div class="contentPanelAdmin">
@@ -59,12 +59,12 @@
                                 <span>Editar Perfil</span>
                             </a>
                             <div class="dropdown-menu">
-                                <form action="{{route('users.edit')}}" method="get">
+                                <form action="{{route('users.editIndividual')}}" method="get">
                                     @csrf
                                     <input type="hidden" name="id" value="{{auth::User()->id}}">
-                                    <button class="editUserPanel">Editar Información</button>
+                                    <button class="dropdown-item editUserPanel">Editar Información</button>
                                 </form>
-                                <a class="dropdown-item" href="#">Agregar Nueva</a>
+                                <a href="" class="dropdown-item" data-toggle="modal" data-target="#editFile">Cambiar Foto</a>
                             </div>
                         </li>
                     </ul>
@@ -100,6 +100,31 @@
             @yield('content')
         </article>
     </section>
+    <div class="modal fade" id="editFile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog editFile" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p><strong>Selecciona la nueva imagen de perfil y presiona el botón guardar</strong></p>
+                    </div>
+                </div>
+                <form action="{{route('edit.file')}}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <input type="hidden" name="id" value="{{auth::User()->id}}">
+                    <div class="fom-group row">
+                        <div class="col-12 mt-3 text-center">
+                            <input type="file" name="file" accept="image/*">
+                        </div>
+                        <div class="col-12 mt-3 text-center">
+                            <input type="submit" value="Guardar" class="btn btn-sm btn-dark">
+                        </div>
+                    </div>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
 </body>
 <script src="{{ asset('js/app.js') }}" defer></script>
 <script src="{{ asset('js/adminApp.js') }}" defer></script>

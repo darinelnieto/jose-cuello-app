@@ -10090,7 +10090,8 @@ h3 {
   padding: 15px;
 }
 .userPanel .contentImg img {
-  width: 100%;
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
 }
 
@@ -10133,6 +10134,10 @@ h3 {
 
 #usuarios_length {
   display: none;
+}
+
+.modal-dialog.editFile {
+  margin: 16% auto;
 }
 
 @media (max-width: 768px) {

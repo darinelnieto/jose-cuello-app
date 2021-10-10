@@ -40,7 +40,6 @@
                                 @enderror
                             </div>
                         </div>
-                        @can('users.create')
                         <div class="form-group row optionsRoleFormRegisterUSers">
                             <div class="col-12 text-center">
                                 <p><strong>Selecciona uno o más roles</strong></p>
@@ -51,11 +50,11 @@
                                             {{ $value->name }}</label>
                                 </div>
                             @endforeach
+                            <input type="hidden" name="file" value="">
                         </div>
-                        @endcan
                         <div class="form-group row">
                             <div class="col-md-6">
-                                {!! Form::password('password', array('placeholder' => 'Contraseña','class' => 'form-control')) !!}
+                                <input type="password" name="password" class="form-control" placeholder="Contraseña">
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -63,7 +62,8 @@
                                 @enderror
                             </div>
                             <div class="col-md-6">
-                                {!! Form::password('confirm-password', array('placeholder' => 'Confirm Contraseña','class' => 'form-control')) !!}                            </div>
+                                <input type="password" name="confirm-password" class="form-control" placeholder="Confirm Contraseña">
+                            </div>
                         </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-12 text-center">

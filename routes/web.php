@@ -32,3 +32,15 @@ Route::post('/users/create', [App\Http\Controllers\UserController::class, 'creat
 Route::get('/users/edit', [App\Http\Controllers\UserController::class, 'edit'])->name('users.edit');
 
 Route::put('/users/update', [App\Http\Controllers\UserController::class, 'update'])->name('users.update');
+
+Route::post('/users/destroy', [App\Http\Controllers\UserController::class, 'destroy'])->name('users.destroy');
+
+// user individual
+
+Route::get('/users/editIndividual', [App\Http\Controllers\UserController::class, 'editIndividual'])->name('users.editIndividual');
+
+Route::put('/users/updateIndividual', [App\Http\Controllers\UserController::class, 'updateIndividual'])->name('users.updateIndividual');
+
+// file 
+
+Route::post('/edit/file', [App\Http\Controllers\UserController::class, 'fileEdit'])->name('edit.file');

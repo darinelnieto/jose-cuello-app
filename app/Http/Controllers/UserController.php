@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\file;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use DB;
@@ -45,9 +46,12 @@ class UserController extends Controller
         $user->phone = $request->phone;
         $user->state = 'Activo';
         $user->password = Hash::make($request->password);
-
-        $user->save();
-        $user->roles()->sync($request->roles);
+        if($request->file('file')){
+            $user->file = $request->file('file')->store('users', 'public');
+            $user->save();
+            $user->roles()->sync($request->roles);
+        }
+        
 
         return redirect('/users/index')->with('mensajeExito', 'El usuario se creo con éxito');
     }
@@ -87,26 +91,68 @@ class UserController extends Controller
             $user->phone = $request->phone;
             $user->password = Hash::make($request->password);
             $user->save();
+        }else if($request->file === null){
+            if($request->password !== null){
+                $user->name = $request->name;
+                $user->surnames = $request->surnames;
+                $user->email = $request->email;
+                $user->phone = $request->phone;
+                $user->password = Hash::make($request->password);
+                $user->save();
+            }
+            $user->name = $request->name;
+            $user->surnames = $request->surnames;
+            $user->email = $request->email;
+            $user->phone = $request->phone;
+            $user->save();
         }
-        $user->name = $request->name;
-        $user->surnames = $request->surnames;
-        $user->email = $request->email;
-        $user->phone = $request->phone;
-        $user->save();
+
         DB::table('model_has_roles')->where('model_id',$request->id)->delete();
 
         $user->assignRole($request->input('role'));
         return redirect('/users/index')->with('mensajeExito', 'El usuario se edito con éxito');
     }
 
+    public function editIndividual(Request $request){
+        $user = User::find($request->id);
+        return view('users.editIndividual', compact('user'));
+    }
+
+    public function updateIndividual(Request $request){
+        $user = User::find($request->id);
+        if($request->password !== null){
+            $user->name = $request->name;
+            $user->surnames = $request->surnames;
+            $user->email = $request->email;
+            $user->phone = $request->phone;
+            $user->password = Hash::make($request->password);
+        }
+        $user->name = $request->name;
+        $user->surnames = $request->surnames;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->save();
+        return redirect('/home');
+    }
+    public function fileEdit(Request $request){
+        $user = User::find($request->id);
+        if($request->file('file')){
+            $user->file = $request->file('file')->store('users', 'public');
+            $user->save();
+        }
+        return redirect('/home');
+    } 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(Request $request)
     {
-        //
+        DB::table("users")->where('id',$request->id)->delete();
+        DB::table('model_has_roles')->where('model_id',$request->id)->delete();
+        return redirect()->back()->with('deleteMessage', '¡El Usuario fue Eliminado Con exito!');
     }
+    
 }
