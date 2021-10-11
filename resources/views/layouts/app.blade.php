@@ -38,7 +38,7 @@
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{route('home')}}">Todos Las Ordenes</a>
-                                <a class="dropdown-item" href="#">Agregar Nueva</a>
+                                <a class="dropdown-item" href="" data-toggle="modal" data-target="#createOrden">Agregar Nueva</a>
                             </div>
                         </li>
                         @can('users.create')
