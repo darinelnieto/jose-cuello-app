@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\OrderController::class, 'index'])->name('home');
 
 // users modulo
 
@@ -44,3 +44,7 @@ Route::put('/users/updateIndividual', [App\Http\Controllers\UserController::clas
 // file 
 
 Route::post('/edit/file', [App\Http\Controllers\UserController::class, 'fileEdit'])->name('edit.file');
+
+// create orden
+
+Route::post('/create/order', [App\Http\Controllers\OrderController::class, 'create'])->name('create.order');

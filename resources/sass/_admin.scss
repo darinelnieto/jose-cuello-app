@@ -151,3 +151,20 @@
     border:1px solid #353638 !important;
     border-radius: 20px !important;
 }
+// modal form create order
+.form-create-product{
+    .form-control{
+        height: 1px;
+    }
+    .label{
+        margin-bottom: 0;
+    }
+}
+.select-field-product{
+    font-size: 12px;
+}
+@media(min-width:576px){
+    .modalFormCreateOrder{
+        max-width: 600px !important;
+    }
+}
