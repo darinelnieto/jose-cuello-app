@@ -16,7 +16,20 @@
             @foreach ($orders as $order)
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="card content-product">
-                        <img src="/storage/{{$order->file}}" alt="" class="image-product-index">
+                        <div class="content-img-order-index" style="background-image:url(/storage/{{$order->file}});">
+                            <div class="content-form-animate-order">
+                                <div class="content-edit">
+                                    <a href="" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#editOrder{{$order->id}}"><i class="fas fa-pencil-alt"></i></a>
+                                </div>
+                                <div class="content-view">
+                                    <form action="">
+                                        @csrf
+                                        <input type="hidden" name="id" value="{{$order->id}}">
+                                        <button class="btn btn-sm btn-dark"><i class="far fa-eye"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                         <div class="card-body">
                             <div class="name-product">
                                 <h4>{{$order->name}}</h4>
@@ -49,6 +62,75 @@
                                 </p>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="editOrder{{$order->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog editFile" role="document">
+                      <div class="modal-content">
+                        <div class="modal-body text-center">
+                            <a href="" class="close" data-dismiss="modal" aria-label="Close">X</a>
+                            {{-- tabs --}}
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home{{$order->id}}" role="tab" aria-controls="home" aria-selected="true">Cambiar estado</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile{{$order->id}}" role="tab" aria-controls="profile" aria-selected="false">Asignar a operario</a>
+                                </li>
+                            </ul>
+                            {{-- end tabs --}}
+                            {{-- area tab --}}
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home{{$order->id}}" role="tabpanel" aria-labelledby="home-tab">
+                                    <form action="{{route('edit.order')}}" method="post">
+                                        @csrf
+                                        <div class="form-group row">
+                                            <div class="col-12 mb-4 text-center">
+                                                <input type="hidden" name="id" value="{{$order->id}}">
+                                                @if ($states)
+                                                   <select name="state_id" id="">
+                                                        @if ($order->states)
+                                                            @foreach ($order->states as $item)
+                                                                <option value="{{$item->id}}">{{$item->state}}</option>
+                                                            @endforeach 
+                                                        @endif
+                                                        @foreach ($states as $state)
+                                                            <option value="{{$state->id}}">{{$state->state}}</option>
+                                                        @endforeach
+                                                   </select>
+                                                @endif
+                                            </div>
+                                            <div class="col-12 text-center">
+                                                <input type="submit" value="Guardar" class="btn btn-sm btn-dark">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade" id="profile{{$order->id}}" role="tabpanel" aria-labelledby="profile-tab">
+                                    <form action="">
+                                        @csrf
+                                        <input type="hidden" name="id" value="{{$order->id}}">
+                                        <div class="form-group row">
+                                            <div class="col-12 text-center mb-4">
+                                                @if ($users)
+                                                    <select name="id" id="">
+                                                        <option value="">Selecciona un osuario</option>
+                                                        @foreach ($users as $user)
+                                                            <option value="{{$user->id}}">{{$user->name}} {{$user->surnames}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                @endif
+                                            </div>
+                                            <div class="col-12 text-center">
+                                                <input type="submit" value="Guardar" class="btn btn-sm btn-dark">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            {{-- end area tabs --}}
+                        </div>
+                      </div>
                     </div>
                 </div>
             @endforeach

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\State;
+use App\Models\User;
+use DB;
 use Illuminate\Http\Request;
 use App\Models\file;
 use App\paginate;
@@ -19,7 +21,9 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::all();
-        return view('ordenes.index', compact('orders'));
+        $users = User::all();
+        $states = State::all();
+        return view('ordenes.index', compact('orders', 'users', 'states'));
     }
 
     /**
@@ -73,9 +77,12 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function edit(Order $order)
+    public function edit(Request $request)
     {
-        //
+        $order = Order::find($request->id);
+        DB::table('order_state')->where('state_id',$request->state_id)->delete();
+        $order->states()->sync($request->state_id);
+        return redirect()->back();
     }
 
     /**

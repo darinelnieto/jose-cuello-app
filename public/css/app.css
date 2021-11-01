@@ -10338,9 +10338,30 @@ html, body {
 .card.content-product {
   padding: 5px;
 }
-.card.content-product .image-product-index {
+.card.content-product:hover {
+  transform: scale(1.05);
+  transition: 1s;
+  box-shadow: 0 0 10px -3px;
+}
+.card.content-product .content-img-order-index {
+  background-position: center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  height: 150px;
   width: 100%;
   border-radius: 4px 4px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+.card.content-product .content-img-order-index .content-form-animate-order {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  bottom: -20%;
+}
+.card.content-product .content-img-order-index .content-form-animate-order .content-edit, .card.content-product .content-img-order-index .content-form-animate-order .content-view {
+  margin: 0 4px;
 }
 .card.content-product .name-product {
   text-align: center;
@@ -10353,4 +10374,24 @@ html, body {
 }
 .card.content-product .card-body .content-description p {
   margin-bottom: 0;
+}
+
+.nav-tabs {
+  border: none;
+}
+.nav-tabs .nav-link.active, .nav-tabs .nav-link.active:hover {
+  border-color: white;
+  border-bottom: 2px solid #888;
+  color: #888;
+  background: transparent;
+}
+.nav-tabs .nav-link {
+  color: black;
+}
+.nav-tabs .nav-link:hover {
+  border-color: white;
+}
+
+select {
+  width: 60%;
 }

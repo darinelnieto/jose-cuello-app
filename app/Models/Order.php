@@ -12,4 +12,8 @@ class Order extends Model
     public function states(){
         return $this->belongsToMany('App\Models\State')->withTimestamps();
     }
+
+    public function users(){
+        return $this->belongsToMany('App\Models\User')->withTimestamps();
+    }
 }
