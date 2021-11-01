@@ -1,0 +1,45 @@
+.content-header-index-product{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .add-new-order-btn{
+        padding: 4px 25px;
+        border-radius: 20px;
+    }
+    .form-search-product{
+        position: relative;
+        .btn-submit-search{
+            background: transparent;
+            border: none;
+            position: absolute;
+            right: 5px;
+            top: 2px;
+            outline: none;
+        }
+        .search-orden{
+            outline: none;
+            border: 1px solid;
+            border-radius: 20px;
+            padding-left: 20px;
+        }
+    }
+}
+.card.content-product{
+    padding: 5px;
+    .image-product-index{
+        width: 100%;
+        border-radius: 4px 4px 0 0;
+    }
+    .name-product{
+        text-align: center;
+    }
+    .card-body{
+        padding: 8px 1rem;
+        .name-product h4{
+            margin-bottom: 0;
+        }
+        .content-description p{
+            margin-bottom: 0;
+        }
+    }
+}

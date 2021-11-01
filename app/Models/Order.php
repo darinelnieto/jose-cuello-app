@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
+    // relación order state
+    public function states(){
+        return $this->belongsToMany('App\Models\State')->withTimestamps();
+    }
 }

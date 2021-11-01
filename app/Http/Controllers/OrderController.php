@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\State;
 use Illuminate\Http\Request;
 use App\Models\file;
+use App\paginate;
 use Illuminate\Support\Arr;
 
 class OrderController extends Controller
@@ -37,6 +39,7 @@ class OrderController extends Controller
         if($request->file('file')){
             $orden->file = $request->file('file')->store('order', 'public');
             $orden->save();
+            $orden->states()->sync($request->id);
         }
 
         return redirect('/home');

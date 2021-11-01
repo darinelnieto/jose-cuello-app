@@ -10307,3 +10307,50 @@ html, body {
   width: 84%;
   outline: none;
 }
+
+.content-header-index-product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content-header-index-product .add-new-order-btn {
+  padding: 4px 25px;
+  border-radius: 20px;
+}
+.content-header-index-product .form-search-product {
+  position: relative;
+}
+.content-header-index-product .form-search-product .btn-submit-search {
+  background: transparent;
+  border: none;
+  position: absolute;
+  right: 5px;
+  top: 2px;
+  outline: none;
+}
+.content-header-index-product .form-search-product .search-orden {
+  outline: none;
+  border: 1px solid;
+  border-radius: 20px;
+  padding-left: 20px;
+}
+
+.card.content-product {
+  padding: 5px;
+}
+.card.content-product .image-product-index {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+}
+.card.content-product .name-product {
+  text-align: center;
+}
+.card.content-product .card-body {
+  padding: 8px 1rem;
+}
+.card.content-product .card-body .name-product h4 {
+  margin-bottom: 0;
+}
+.card.content-product .card-body .content-description p {
+  margin-bottom: 0;
+}

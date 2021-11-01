@@ -9,6 +9,7 @@
                     <div class="col-12">
                         <form action="{{route('create.order')}}" method="post" class="form-create-product" enctype="multipart/form-data">
                             @csrf
+                            <input type="hidden" name="id" value="4">
                             <div class="form-group row">
                                 <div class="col-12 col-lg-6">
                                     <label for="name">Nombre del producto:</label>

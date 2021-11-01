@@ -21,7 +21,6 @@ class Roles extends Seeder
         $operario = Role::create(['name' => 'Operario']);
         $vendedor = Role::create(['name' => 'Vendedor']);
         
-        
         // permisos por roles
         Permission::create(['name' => 'home'])->syncRoles([$administrador, $acabados, $corte, $operario, $vendedor]);
 
