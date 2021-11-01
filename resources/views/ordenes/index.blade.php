@@ -82,6 +82,7 @@
                             {{-- area tab --}}
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="home{{$order->id}}" role="tabpanel" aria-labelledby="home-tab">
+                                    {{-- form edit state --}}
                                     <form action="{{route('edit.order')}}" method="post">
                                         @csrf
                                         <div class="form-group row">
@@ -105,15 +106,17 @@
                                             </div>
                                         </div>
                                     </form>
+                                    {{-- end form edit state --}}
                                 </div>
                                 <div class="tab-pane fade" id="profile{{$order->id}}" role="tabpanel" aria-labelledby="profile-tab">
-                                    <form action="">
+                                    {{-- form assign order --}}
+                                    <form action="{{route('assign.order')}}" method="post">
                                         @csrf
                                         <input type="hidden" name="id" value="{{$order->id}}">
                                         <div class="form-group row">
                                             <div class="col-12 text-center mb-4">
                                                 @if ($users)
-                                                    <select name="id" id="">
+                                                    <select name="user_id" id="">
                                                         <option value="">Selecciona un osuario</option>
                                                         @foreach ($users as $user)
                                                             <option value="{{$user->id}}">{{$user->name}} {{$user->surnames}}</option>
@@ -126,6 +129,7 @@
                                             </div>
                                         </div>
                                     </form>
+                                    {{-- end form assign order --}}
                                 </div>
                             </div>
                             {{-- end area tabs --}}

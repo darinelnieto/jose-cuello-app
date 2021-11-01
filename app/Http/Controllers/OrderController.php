@@ -80,7 +80,6 @@ class OrderController extends Controller
     public function edit(Request $request)
     {
         $order = Order::find($request->id);
-        DB::table('order_state')->where('state_id',$request->state_id)->delete();
         $order->states()->sync($request->state_id);
         return redirect()->back();
     }
@@ -92,9 +91,11 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Order $order)
+    public function assignOrder(Request $request)
     {
-        //
+        $order = Order::find($request->id);
+        $order->users()->sync($request->user_id);
+        return redirect()->back();
     }
 
     /**

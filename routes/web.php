@@ -50,3 +50,5 @@ Route::post('/edit/file', [App\Http\Controllers\UserController::class, 'fileEdit
 Route::post('/create/order', [App\Http\Controllers\OrderController::class, 'create'])->name('create.order');
 
 Route::post('/edit/order', [App\Http\Controllers\OrderController::class, 'edit'])->name('edit.order');
+
+Route::post('/assign/order', [App\Http\Controllers\OrderController::class, 'assignOrder'])->name('assign.order');
