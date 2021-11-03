@@ -5,16 +5,16 @@
     <div class="row">
         <div class="col-12 mb-4 mt-4 content-header-index-product">
             <a href="" class="btn btn-sm btn-dark add-new-order-btn" data-toggle="modal" data-target="#createOrden">Agregar nuevo</a>
-            <form action="" class="form-search-product">
-                <input type="search" name="name" class="search-orden" placeholder="Buscar...">
+            <form action="{{route('search.order')}}" method="get" class="form-search-product">
+                <input type="date" name="deadline" class="search-orden">
                 <button class="btn-submit-search"><i class="fas fa-search"></i></button>
             </form>
         </div>
     </div>
-    <div class="row">
+    <div class="row content-product-list">
         @if($orders)
             @foreach ($orders as $order)
-                <div class="col-12 col-md-6 col-lg-3">
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
                     <div class="card content-product">
                         <div class="content-img-order-index" style="background-image:url(/storage/{{$order->file}});">
                             <div class="content-form-animate-order">
@@ -22,7 +22,7 @@
                                     <a href="" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#editOrder{{$order->id}}"><i class="fas fa-pencil-alt"></i></a>
                                 </div>
                                 <div class="content-view">
-                                    <form action="">
+                                    <form action="{{route('view.order')}}" method="get">
                                         @csrf
                                         <input type="hidden" name="id" value="{{$order->id}}">
                                         <button class="btn btn-sm btn-dark"><i class="far fa-eye"></i></button>
@@ -139,6 +139,11 @@
                 </div>
             @endforeach
         @endif
+    </div>
+    <div class="row">
+        <div class="col-12 text-right mt-4">
+            {{ $orders->links() }}
+        </div>
     </div>
 </div>
 @endsection

@@ -11,9 +11,6 @@
         .btn-submit-search{
             background: transparent;
             border: none;
-            position: absolute;
-            right: 5px;
-            top: 2px;
             outline: none;
         }
         .search-orden{
@@ -81,4 +78,49 @@
 }
 select{
     width: 60%;
+}
+.content-product-list{
+    height: 65vh;
+    overflow-y: scroll;
+}
+// style view order
+.content-order-view{
+    align-items: center;
+    height: 80vh;
+    overflow-y: scroll;
+    .image-view-order{
+        width: 100%;
+        border-radius: 10px;
+    }
+    .btn-back-order{
+        padding: 4px 20px;
+        border-radius: 20px;
+    }
+}
+
+.flex.justify-between.flex-1, .text-sm.text-gray-700.leading-5{
+    display: none !important;
+}
+.hidden{
+    display: flex !important;
+    justify-content: right;
+    position: relative;
+    right: 2%;
+}
+    
+svg{
+    width: 20px !important;
+}
+
+.relative.inline-flex.items-center.px-4.py-2.-ml-px.text-sm.font-medium.text-gray-500.bg-white.border.border-gray-300.cursor-default.leading-5{
+    color: white !important;
+    background: #313335 !important;
+    border: 2px solid #313335 !important;
+    padding: 0 10px !important;
+    margin-left: 4px;
+}
+.pl-2, .px-2{
+    color: #313335 !important;
+    border: 2px solid #313335 !important;
+    padding: 0 10px !important;
 }

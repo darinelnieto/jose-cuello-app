@@ -52,3 +52,7 @@ Route::post('/create/order', [App\Http\Controllers\OrderController::class, 'crea
 Route::post('/edit/order', [App\Http\Controllers\OrderController::class, 'edit'])->name('edit.order');
 
 Route::post('/assign/order', [App\Http\Controllers\OrderController::class, 'assignOrder'])->name('assign.order');
+
+Route::get('/view/order', [App\Http\Controllers\OrderController::class, 'viewOrder'])->name('view.order');
+
+Route::get('/search/order', [App\Http\Controllers\OrderController::class, 'search'])->name('search.order');

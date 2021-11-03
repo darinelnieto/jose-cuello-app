@@ -20,7 +20,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::all();
+        $orders = Order::paginate(8);
         $users = User::all();
         $states = State::all();
         return view('ordenes.index', compact('orders', 'users', 'states'));
@@ -49,34 +49,6 @@ class OrderController extends Controller
         return redirect('/home');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Order $order)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Request $request)
     {
         $order = Order::find($request->id);
@@ -84,13 +56,6 @@ class OrderController extends Controller
         return redirect()->back();
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
     public function assignOrder(Request $request)
     {
         $order = Order::find($request->id);
@@ -98,14 +63,15 @@ class OrderController extends Controller
         return redirect()->back();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Order $order)
-    {
-        //
-    }
+   public function viewOrder(Request $request){
+        $view = Order::find($request->id);
+        return view('ordenes.view-order', compact('view'));
+   }
+   
+   public function search(Request $request){
+        $orders = Order::where('deadline', '=', $request->deadline)->paginate(8);
+        $users = User::all();
+        $states = State::all();
+        return view('ordenes.index', compact('orders', 'users', 'states'));
+   }
 }
