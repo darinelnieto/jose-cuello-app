@@ -48,4 +48,8 @@ class User extends Authenticatable
     public function orders(){
         return $this->belongsToMany('App\Models\Order')->withTimestamps();
     }
+
+    public function garments(){
+        return $this->belongsToMany('App\Models\garments')->withTimestamps();
+    }
 }

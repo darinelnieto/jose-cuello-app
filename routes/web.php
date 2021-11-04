@@ -56,3 +56,13 @@ Route::post('/assign/order', [App\Http\Controllers\OrderController::class, 'assi
 Route::get('/view/order', [App\Http\Controllers\OrderController::class, 'viewOrder'])->name('view.order');
 
 Route::get('/search/order', [App\Http\Controllers\OrderController::class, 'search'])->name('search.order');
+
+// Register prendas operario
+
+Route::get('/index/register', [App\Http\Controllers\GarmentController::class, 'index'])->name('index.register');
+
+Route::post('/create/register', [App\Http\Controllers\GarmentController::class, 'create'])->name('create.register');
+
+Route::get('/reportes', [App\Http\Controllers\GarmentController::class, 'reports'])->name('reportes');
+
+route::get('/reporte/usuario', [App\Http\Controllers\GarmentController::class, 'userReports'])->name('reporte.usuario');

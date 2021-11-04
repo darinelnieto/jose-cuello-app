@@ -30,8 +30,8 @@ class Roles extends Seeder
         Permission::create(['name' => 'users.edit'])->assignRole($administrador);
         Permission::create(['name' => 'users.destroy'])->assignRole($administrador);
 
-        Permission::create(['name' => 'ordenes.index'])->syncRoles([$administrador, $acabados, $corte, $vendedor]);
-        Permission::create(['name' => 'ordenes.create'])->syncRoles([$administrador, $acabados, $corte, $vendedor]);
+        Permission::create(['name' => 'ordenes.index'])->syncRoles([$administrador, $acabados, $corte, $vendedor, $operario]);
+        Permission::create(['name' => 'ordenes.create'])->syncRoles([$administrador, $vendedor]);
         Permission::create(['name' => 'ordenes.edit'])->syncRoles([$administrador, $acabados, $corte, $vendedor]);
         Permission::create(['name' => 'ordenes.destroy'])->syncRoles([$administrador, $acabados, $corte, $vendedor]);
 

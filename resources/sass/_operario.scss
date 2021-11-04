@@ -1,0 +1,42 @@
+.alinea-row{
+    align-items: center;
+    h4{
+        margin-bottom: 0;
+    }
+    .form-search-operario{
+        width: 100%;
+        padding-left: 10px;
+        border: none;
+        border-bottom: 1px solid #333;
+        outline: none;
+        &:focus{
+            border-bottom: 1px solid #999;
+        }
+    }
+    .btn-submit-search{
+        border:none;
+        background: transparent;
+        outline: none;
+    }
+}
+.user-operario{
+    border-radius: 10px;
+    &:hover{
+        transform: scale(1.01);
+        box-shadow: 0 0 10px -1px;
+        transition: .5s;
+    }
+    .foto-perfil-operario{
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        background-position: center;
+        margin: 10px auto;
+        background-size: 100%;
+        box-shadow: 0 0 10px -1px;
+    }
+}
+.content-table-report{
+    height: 80vh;
+    overflow-y: scroll;
+}

@@ -10440,3 +10440,53 @@ svg {
   border: 2px solid #313335 !important;
   padding: 0 10px !important;
 }
+
+.btn-back-order {
+  padding: 4px 20px;
+  border-radius: 20px;
+}
+
+.alinea-row {
+  align-items: center;
+}
+.alinea-row h4 {
+  margin-bottom: 0;
+}
+.alinea-row .form-search-operario {
+  width: 100%;
+  padding-left: 10px;
+  border: none;
+  border-bottom: 1px solid #333;
+  outline: none;
+}
+.alinea-row .form-search-operario:focus {
+  border-bottom: 1px solid #999;
+}
+.alinea-row .btn-submit-search {
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+.user-operario {
+  border-radius: 10px;
+}
+.user-operario:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 10px -1px;
+  transition: 0.5s;
+}
+.user-operario .foto-perfil-operario {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-position: center;
+  margin: 10px auto;
+  background-size: 100%;
+  box-shadow: 0 0 10px -1px;
+}
+
+.content-table-report {
+  height: 80vh;
+  overflow-y: scroll;
+}

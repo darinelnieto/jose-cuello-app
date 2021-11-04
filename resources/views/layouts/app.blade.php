@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
     <!-- Styles -->
     
 </head>
@@ -38,9 +40,32 @@
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{route('home')}}">Todos Las Ordenes</a>
-                                <a class="dropdown-item" href="" data-toggle="modal" data-target="#createOrden">Agregar Nueva</a>
+                                @can('ordenes.create')
+                                    <a class="dropdown-item" href="" data-toggle="modal" data-target="#createOrden">Agregar Nueva</a>
+                                @endcan
                             </div>
                         </li>
+                        @can('prendas.index')
+                        <li>
+                            <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="far fa-address-book"></i>
+                                <span>Operarios</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                @can('users.create')
+                                    <a class="dropdown-item" href="{{route('reportes')}}">Todos los reportes</a>
+                                @endcan
+                                @can('prendas.create')
+                                    <form action="{{route('index.register')}}" method="get">
+                                        @csrf
+                                        <input type="hidden" name="id" value="{{auth::User()->id}}">
+                                        <input type="submit" class="dropdown-item" value="Reportes">
+                                    </form>
+                                    <a class="dropdown-item" href="" data-toggle="modal" data-target="#reporteCreate">Agregar Nuevo</a>
+                                @endcan
+                            </div>
+                        </li>
+                        @endcan
                         @can('users.create')
                         <li class="nav-item dropdown">
                             <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
@@ -121,6 +146,15 @@
                         </div>
                     </div>
                 </form>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="modal fade" id="reporteCreate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog editFile" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+                @include('prendas.create')
             </div>
           </div>
         </div>

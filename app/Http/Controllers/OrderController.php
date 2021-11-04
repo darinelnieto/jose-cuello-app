@@ -21,7 +21,7 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::paginate(8);
-        $users = User::all();
+        $users = User::whereHas("roles", function($q){ $q->where("name", "Operario"); })->get();
         $states = State::all();
         return view('ordenes.index', compact('orders', 'users', 'states'));
     }
