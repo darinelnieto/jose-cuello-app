@@ -7,7 +7,7 @@
                 <h4>Lista de operarios</h4>
             </div>
             <div class="col-12 col-lg-5">
-                <form action="" method="get">
+                <form action="{{route('search.usuario')}}" method="get">
                     <div class="form-group row">
                         <div class="col-5 col-5 pl-1 pr-1">
                             <input type="text" name="name" id="" class="form-search-operario" placeholder="nombre">

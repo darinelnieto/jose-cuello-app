@@ -21,6 +21,7 @@
         }
     }
 }
+
 .card.content-product{
     padding: 5px;
     &:hover{
@@ -42,7 +43,7 @@
             justify-content: center;
             position: absolute;
             width: 100%;
-            bottom: -20%;
+            bottom: -23%;
             .content-edit, .content-view{
                 margin: 0 4px;
             }
@@ -58,22 +59,23 @@
         }
         .content-description p{
             margin-bottom: 0;
+            font-size: 14px;
         }
     }
 }
 .nav-tabs{
-    border: none;
+    border: none !important;
     .nav-link.active, .nav-link.active:hover{
-        border-color: white;
-        border-bottom: 2px solid #888;
-        color: #888;
-        background:transparent;
+        border-color: white !important;
+        border-bottom: 2px solid #888 !important;
+        color: #888 !important;
+        background:transparent !important;
     }
     .nav-link{
-        color:black;
+        color:black !important;
     }
     .nav-link:hover{
-        border-color: white;
+        border-color: white !important;
     }
 }
 select{

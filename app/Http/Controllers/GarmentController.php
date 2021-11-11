@@ -37,4 +37,5 @@ class GarmentController extends Controller
         $reports = User::find($request->id);
         return view('prendas.report-user', compact('reports'));
     }
+
 }

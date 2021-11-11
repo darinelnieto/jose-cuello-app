@@ -5,7 +5,7 @@
         <div class="col-md-10 mt-5">
             <div class="card">
                 <div class="card-body">
-                    <h2 class="tituloRegistroUsuario">Registro de usuario</h2>
+                    <h2 class="tituloRegistroUsuario h3">Registro de usuario</h2>
             
                     {!! Form::model($user, ['method' => 'PUT','route' => ['users.update']]) !!}
                         @csrf
@@ -46,7 +46,7 @@
                             </div>
                             @foreach ($roles as $value)
                                 <div class="col-6 col-md-3 col-lg-2">
-                                    <label>{{ Form::radio('role', $value->id, in_array($value->id, $userRole) ? true : false, array('class' => 'name mr-1')) }}
+                                    <label class="label-role">{{ Form::radio('role', $value->id, in_array($value->id, $userRole) ? true : false, array('class' => 'name mr-1')) }}
                                             {{ $value->name }}</label>
                                 </div>
                             @endforeach

@@ -5,7 +5,7 @@
         <div class="col-md-10 mt-5">
             <div class="card">
                 <div class="card-body">
-                    <h2 class="tituloRegistroUsuario">Registro de usuario</h2>
+                    <h2 class="tituloRegistroUsuario h3">Registro de usuario</h2>
             
                     {!! Form::open(['route' => 'users.create', 'method' => 'POST', 'enctype' =>'multipart/form-data']) !!}
                         @csrf
@@ -46,8 +46,8 @@
                             </div>
                             @foreach ($roles as $rol)
                                 <div class="col-6 col-md-3 col-lg-2">
-                                    <label>
-                                        <input type="radio" name="roles" value="{{ $rol->id }}" class="mr-1">
+                                    <label class="label-role">
+                                        <input type="radio" name="roles" value="{{ $rol->id }}" class="mr-1" >
                                         {{ $rol->name }}
                                     </label>
                                 </div>

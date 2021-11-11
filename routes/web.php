@@ -65,4 +65,6 @@ Route::post('/create/register', [App\Http\Controllers\GarmentController::class, 
 
 Route::get('/reportes', [App\Http\Controllers\GarmentController::class, 'reports'])->name('reportes');
 
-route::get('/reporte/usuario', [App\Http\Controllers\GarmentController::class, 'userReports'])->name('reporte.usuario');
+Route::get('/reporte/usuario', [App\Http\Controllers\GarmentController::class, 'userReports'])->name('reporte.usuario');
+
+Route::get('/search/user/operario', [App\Http\Controllers\GarmentController::class, 'userSearch'])->name('search.usuario');

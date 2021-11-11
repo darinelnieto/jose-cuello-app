@@ -10154,6 +10154,7 @@ h3 {
   }
 }
 .form-control.form-control-sm {
+  border: none !important;
   border: 1px solid #353638 !important;
   border-radius: 20px !important;
 }
@@ -10271,16 +10272,20 @@ html, body {
 .form-control {
   border-radius: 0;
   box-shadow: none !important;
-  border: none;
-  border-bottom: 2px solid #353638;
+  border: none !important;
+  border-bottom: 2px solid #353638 !important;
 }
 .form-control:focus {
-  border-bottom: 2px solid #cacaca;
+  border-bottom: 2px solid #cacaca !important;
 }
 
 .form-group {
   width: 100%;
   margin: 3% auto;
+}
+
+.label-role {
+  font-size: 15px;
 }
 
 .tableUsersList thead {
@@ -10355,7 +10360,7 @@ html, body {
   justify-content: center;
   position: absolute;
   width: 100%;
-  bottom: -20%;
+  bottom: -23%;
 }
 .card.content-product .content-img-order-index .content-form-animate-order .content-edit, .card.content-product .content-img-order-index .content-form-animate-order .content-view {
   margin: 0 4px;
@@ -10371,22 +10376,23 @@ html, body {
 }
 .card.content-product .card-body .content-description p {
   margin-bottom: 0;
+  font-size: 14px;
 }
 
 .nav-tabs {
-  border: none;
+  border: none !important;
 }
 .nav-tabs .nav-link.active, .nav-tabs .nav-link.active:hover {
-  border-color: white;
-  border-bottom: 2px solid #888;
-  color: #888;
-  background: transparent;
+  border-color: white !important;
+  border-bottom: 2px solid #888 !important;
+  color: #888 !important;
+  background: transparent !important;
 }
 .nav-tabs .nav-link {
-  color: black;
+  color: black !important;
 }
 .nav-tabs .nav-link:hover {
-  border-color: white;
+  border-color: white !important;
 }
 
 select {
