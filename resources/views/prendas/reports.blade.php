@@ -22,10 +22,10 @@
                 </form>
             </div>
         </div>
-        <div class="row mt-4">
+        <div class="row mt-4" style="overflow-y:scroll;height:60vh">
             @if ($users)
                 @foreach ($users as $user)
-                    <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="col-10 offset-1 offset-md-0 col-md-4 col-lg-3 mb-4">
                         <div class="card user-operario">
                             <div class="foto-perfil-operario" style="background-image: url(/storage/{{$user->file}})"></div>
                             <div class="text-center mt-3 mb-4">

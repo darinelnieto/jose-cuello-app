@@ -16,7 +16,7 @@
     <div class="row content-product-list">
         @if($orders)
             @foreach ($orders as $order)
-                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <div class="col-10 offset-1 offset-md-0 col-md-4 col-lg-3 mb-4">
                     <div class="card content-product">
                         <div class="content-img-order-index" style="background-image:url(/storage/{{$order->file}});">
                             <div class="content-form-animate-order">
@@ -24,7 +24,7 @@
                                     <div class="content-edit">
                                         <a href="" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#editOrder{{$order->id}}"><i class="fas fa-pencil-alt"></i></a>
                                     </div>
-                                    @endcan
+                                @endcan
                                 <div class="content-view">
                                     <form action="{{route('view.order')}}" method="get">
                                         @csrf

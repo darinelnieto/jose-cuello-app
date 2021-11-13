@@ -91,7 +91,7 @@ select{
     height: 80vh;
     overflow-y: scroll;
     .image-view-order{
-        width: 100%;
+        width: 80%;
         border-radius: 10px;
     }
     .btn-back-order{
@@ -129,4 +129,33 @@ svg{
 .btn-back-order{
     padding: 4px 20px;
     border-radius: 20px;
+}
+.product-progress{
+    border:1px solid #313335;
+    border-radius: 20px;
+    padding: 0 !important;
+    div{
+        background:#313335;
+        color:white;
+        text-align: right;
+        border-radius: 20px;
+        padding: 0 20px;
+    }
+}
+@media(max-width:640px){
+    .add-new-order-btn{
+        width: 40%;
+        padding: 4px 10px !important;
+        margin-right: 10px;
+    }
+    .form-search-product{
+        width: 60%;
+        .search-orden{
+            padding-left: 8px !important;
+            width: 85%;
+        }
+        .btn-submit-search{
+            padding: 0;
+        }
+    }
 }

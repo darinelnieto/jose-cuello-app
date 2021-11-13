@@ -27,7 +27,7 @@
             <div class="userPanel">
                 <h4 class="nameUser">{{auth::User()->name}} {{auth::User()->surnames}}</h4>
                 <div class="contentImg">
-                    <img src="/storage/{{auth::User()->file}}" alt="Imagen de perfil">
+                    <div class="image-user" style="background-image:url(/storage/{{auth::User()->file}})"></div>
                 </div>
             </div>
             <div class="contentPanelAdmin">
@@ -112,7 +112,12 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 headerContent">
-                            <a href="" class="barController">
+                            <a href="" class="barController desktop">
+                                <hr class="barCorto"/>
+                                <hr class="barLargo"/>
+                                <hr class="barLargo"/>
+                            </a>
+                            <a href="" class="barController movil">
                                 <hr class="barCorto"/>
                                 <hr class="barLargo"/>
                                 <hr class="barLargo"/>

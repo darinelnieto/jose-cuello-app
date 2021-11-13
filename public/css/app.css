@@ -10051,21 +10051,54 @@ h3 {
   justify-content: space-between;
   align-items: center;
 }
-.headerApp .headerContent .barController .barCorto {
-  border-top: 2px solid #353638;
+.headerApp .headerContent .barController.desktop {
+  z-index: 100;
+  color: #353638;
+}
+.headerApp .headerContent .barController.desktop .barCorto {
+  border-top: 2px solid;
   width: 15px;
   margin: 0;
   margin-bottom: 4px;
 }
-.headerApp .headerContent .barController .barLargo {
-  border-top: 2px solid #353638;
+.headerApp .headerContent .barController.desktop .barLargo {
+  border-top: 2px solid;
   width: 25px;
   margin: 0;
   margin-bottom: 4px;
 }
-.headerApp .headerContent .barController:hover .barCorto {
+.headerApp .headerContent .barController.desktop:hover .barCorto {
   width: 25px;
   transition: 0.3s;
+}
+.headerApp .headerContent .barController.movil {
+  z-index: 100;
+  display: none;
+  color: #aeadad;
+}
+.headerApp .headerContent .barController.movil .barCorto {
+  border-top: 2px solid;
+  width: 15px;
+  margin: 0;
+  margin-bottom: 4px;
+}
+.headerApp .headerContent .barController.movil .barLargo {
+  border-top: 2px solid;
+  width: 25px;
+  margin: 0;
+  margin-bottom: 4px;
+}
+.headerApp .headerContent .barController.movil:hover .barCorto {
+  width: 25px;
+  transition: 0.3s;
+}
+@media (max-width: 768px) {
+  .headerApp .headerContent .barController.movil {
+    display: block;
+  }
+  .headerApp .headerContent .barController.desktop {
+    display: none;
+  }
 }
 .headerApp .headerContent .logoApp {
   width: 80px;
@@ -10087,12 +10120,14 @@ h3 {
   margin: 0 auto;
   border: 1px solid white;
   border-radius: 50%;
-  padding: 15px;
+  padding: 15.7px;
 }
-.userPanel .contentImg img {
+.userPanel .contentImg .image-user {
   width: 88px;
   height: 88px;
   border-radius: 50%;
+  background-position: center;
+  background-size: 100%;
 }
 
 .contentPanelAdmin {
@@ -10410,7 +10445,7 @@ select {
   overflow-y: scroll;
 }
 .content-order-view .image-view-order {
-  width: 100%;
+  width: 80%;
   border-radius: 10px;
 }
 .content-order-view .btn-back-order {
@@ -10452,6 +10487,37 @@ svg {
   border-radius: 20px;
 }
 
+.product-progress {
+  border: 1px solid #313335;
+  border-radius: 20px;
+  padding: 0 !important;
+}
+.product-progress div {
+  background: #313335;
+  color: white;
+  text-align: right;
+  border-radius: 20px;
+  padding: 0 20px;
+}
+
+@media (max-width: 640px) {
+  .add-new-order-btn {
+    width: 40%;
+    padding: 4px 10px !important;
+    margin-right: 10px;
+  }
+
+  .form-search-product {
+    width: 60%;
+  }
+  .form-search-product .search-orden {
+    padding-left: 8px !important;
+    width: 85%;
+  }
+  .form-search-product .btn-submit-search {
+    padding: 0;
+  }
+}
 .alinea-row {
   align-items: center;
 }
