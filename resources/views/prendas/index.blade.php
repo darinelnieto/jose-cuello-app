@@ -11,7 +11,7 @@
                     <tr>
                         <th>Nombre</th>
                         <th>Referencia</th>
-                        <th>cantidad</th>
+                        <th>Cantidad aprobada</th>
                         <th>Fecha y hora</th>
                     </tr>
                 </thead>

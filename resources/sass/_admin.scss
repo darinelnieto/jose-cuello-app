@@ -134,7 +134,6 @@
     top: 34%;
     height: 40vh;
     .nav.flex-column{
-       padding-left:30px;
         .dropdown-menu{
             width: 100%;
             border: none;
@@ -185,12 +184,12 @@
 .form-control.form-control-sm{
     border:none !important;
     border:1px solid #353638 !important;
-    border-radius: 20px !important;
+    border-radius: 0px !important;
 }
 // modal form create order
 .form-create-product{
     .form-control{
-        height: 1px;
+        height: 26px;
     }
     .label{
         margin-bottom: 0;

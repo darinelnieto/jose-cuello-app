@@ -10136,9 +10136,6 @@ h3 {
   top: 34%;
   height: 40vh;
 }
-.contentPanelAdmin .nav.flex-column {
-  padding-left: 30px;
-}
 .contentPanelAdmin .nav.flex-column .dropdown-menu {
   width: 100%;
   border: none;
@@ -10191,11 +10188,11 @@ h3 {
 .form-control.form-control-sm {
   border: none !important;
   border: 1px solid #353638 !important;
-  border-radius: 20px !important;
+  border-radius: 0px !important;
 }
 
 .form-create-product .form-control {
-  height: 1px;
+  height: 26px;
 }
 .form-create-product .label {
   margin-bottom: 0;
@@ -10440,7 +10437,6 @@ select {
 }
 
 .content-order-view {
-  align-items: center;
   height: 80vh;
   overflow-y: scroll;
 }

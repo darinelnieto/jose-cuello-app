@@ -33,39 +33,6 @@
             <div class="contentPanelAdmin">
                 <div class="userCollapse">
                     <ul class="nav flex-column">
-                        <li>
-                            <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-clipboard-list"></i>
-                                <span>Ordenes</span>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{route('home')}}">Todos Las Ordenes</a>
-                                @can('ordenes.create')
-                                    <a class="dropdown-item" href="" data-toggle="modal" data-target="#createOrden">Agregar Nueva</a>
-                                @endcan
-                            </div>
-                        </li>
-                        @can('prendas.index')
-                        <li>
-                            <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <i class="far fa-address-book"></i>
-                                <span>Operarios</span>
-                            </a>
-                            <div class="dropdown-menu">
-                                @can('users.create')
-                                    <a class="dropdown-item" href="{{route('reportes')}}">Todos los reportes</a>
-                                @endcan
-                                @can('prendas.create')
-                                    <form action="{{route('index.register')}}" method="get">
-                                        @csrf
-                                        <input type="hidden" name="id" value="{{auth::User()->id}}">
-                                        <input type="submit" class="dropdown-item" value="Reportes">
-                                    </form>
-                                    <a class="dropdown-item" href="" data-toggle="modal" data-target="#reporteCreate">Agregar Nuevo</a>
-                                @endcan
-                            </div>
-                        </li>
-                        @endcan
                         @can('users.create')
                         <li class="nav-item dropdown">
                             <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
@@ -92,6 +59,39 @@
                                 <a href="" class="dropdown-item" data-toggle="modal" data-target="#editFile">Cambiar Foto</a>
                             </div>
                         </li>
+                        <li>
+                            <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-clipboard-list"></i>
+                                <span>Ordenes</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{route('home')}}">Todos Las Ordenes</a>
+                                @can('ordenes.create')
+                                    <a class="dropdown-item" href="" data-toggle="modal" data-target="#createOrden">Agregar Nueva</a>
+                                @endcan
+                            </div>
+                        </li>
+                        @can('prendas.index')
+                        <li>
+                            <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="far fa-address-book"></i>
+                                <span>Producción</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                @can('users.create')
+                                    <a class="dropdown-item" href="{{route('reportes')}}">Todos los reportes</a>
+                                @endcan
+                                @can('prendas.create')
+                                    <form action="{{route('index.register')}}" method="get">
+                                        @csrf
+                                        <input type="hidden" name="id" value="{{auth::User()->id}}">
+                                        <input type="submit" class="dropdown-item" value="Reportes">
+                                    </form>
+                                    <a class="dropdown-item" href="" data-toggle="modal" data-target="#reporteCreate">Agregar Nuevo</a>
+                                @endcan
+                            </div>
+                        </li>
+                        @endcan
                     </ul>
                 </div>
             </div>

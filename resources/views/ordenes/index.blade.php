@@ -121,7 +121,7 @@
                                             <div class="col-12 text-center mb-4">
                                                 @if ($users)
                                                     <select name="user_id" id="">
-                                                        <option value="">Selecciona un osuario</option>
+                                                        <option value="">Selecciona un usuario</option>
                                                         @foreach ($users as $user)
                                                             <option value="{{$user->id}}">{{$user->name}} {{$user->surnames}}</option>
                                                         @endforeach

@@ -10,10 +10,10 @@
                 <form action="{{route('search.usuario')}}" method="get">
                     <div class="form-group row">
                         <div class="col-5 col-5 pl-1 pr-1">
-                            <input type="text" name="name" id="" class="form-search-operario" placeholder="nombre">
+                            <input type="text" name="name" id="" class="form-search-operario" placeholder="Nombre">
                         </div>
                         <div class="col-5 col-5 pl-1 pr-1">
-                            <input type="text" name="surnames" id="" class="form-search-operario" placeholder="apellidos">
+                            <input type="text" name="surnames" id="" class="form-search-operario" placeholder="Apellidos">
                         </div>
                         <div class="col-2 pl-1 pr-1">
                             <button class="btn-submit-search"><i class="fas fa-search"></i></button>
